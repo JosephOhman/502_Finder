@@ -1,0 +1,29 @@
+﻿@using _502Finder.Models.View;
+@model StrainsViewModel
+
+@{
+    ViewBag.Title = "Marijuana Strains";
+}
+
+<div class="search-results">
+    Found @Model.StrainList.Count.ToString("#,##0.##") results
+</div>
+
+@foreach (Strain strain in Model.StrainList)
+{
+    <div class="row strain-cell">
+        <div class="col-lg-12">
+            <a class="strain-link" href='@Url.Action("StrainDetail", "Home", new { id = strain.Id })'>
+                <div class="strain-box">
+                    <h1 class="strain-name">@strain.Name</h1>
+                    <p class="strain-type">@strain.Type</p>
+                    @*<div class="strain-thc">THC @strain.THC.ToString()%</div>
+                    <div class="strain-cbd">CBD @strain.CBD.ToString()%</div>*@
+                </div>
+            </a>
+        </div>
+    </div>
+}
+
+<div class="clearfix">
+</div>
