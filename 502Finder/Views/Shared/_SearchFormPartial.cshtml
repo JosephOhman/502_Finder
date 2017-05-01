@@ -1,0 +1,25 @@
+﻿@{
+    var options = new AjaxOptions {
+        HttpMethod = "POST"
+    };
+
+    var formAttributes = new
+    {
+        @role = "search",
+        @value = "Search",
+        @class = "strain-search-form"
+    };
+
+    var inputAttributes = new
+    {
+        @autocomplete = "off",
+        @placeholder = "What are you looking for?"
+    };
+}
+<section class="webdesigntuts-workshop">
+    @using (Ajax.BeginForm("StrainSearch", "Home", FormMethod.Post, options, formAttributes))
+    {
+        @Html.TextBox("query", null, inputAttributes)
+        <label><button>Search</button></label>
+    }
+</section>

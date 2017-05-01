@@ -1,0 +1,20 @@
+﻿@using _502Finder.Models.View;
+@model StrainDetailViewModel
+@{
+    ViewBag.Title = "Marijuana Strains";
+}
+<div class="strains">
+    <div class="strain-cell">
+        <a class="strain-link" href='@Url.Action("StrainDetail", "Home", new { id = Model.Strain.Id })'>
+            <div class="strain-box">
+                <h1 class="strain-name">@Model.Strain.Name</h1>
+                <p class="strain-type">@Model.Strain.Type</p>
+                <div class="strain-thc">Available in 27 farms.</div>
+                @*<div class="strain-thc">THC @Model.Strain.THC.ToString()%</div>
+                <div class="strain-cbd">CBD @Model.Strain.CBD.ToString()%</div>*@
+            </div>
+        </a>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
